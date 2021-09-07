@@ -2,6 +2,7 @@ package com.sriyank.tipcalculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatDelegate
 import com.sriyank.tipcalculator.databinding.ActivityMainBinding
 import java.text.NumberFormat
 import kotlin.math.ceil
@@ -10,6 +11,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        //Disable Night Mode default when testing on HUAWEI Y9 2019
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
